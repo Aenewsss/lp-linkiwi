@@ -4,6 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { useRouter } from "next/navigation";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { ref, set } from "firebase/database";
+import { getDatabase } from "firebase/database";
+
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 const faqItems = [
   {
@@ -33,6 +51,35 @@ const faqItems = [
 ];
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleCheckout = async (planType: 'basic' | 'premium') => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ planType, email: user.email }),
+      });
+
+      const { url } = await response.json();
+
+      // Set info of stripe_plan on realtime database
+      const db = getDatabase();
+      const userRef = ref(db, 'users/' + user.uid);
+      await set(userRef, {
+        planType
+      });
+
+      router.push(url);
+    } catch (error) {
+      console.error('Error creating checkout session:', error);
+    }
+  };
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -184,10 +231,10 @@ export default function Home() {
                 <li>✔ Até 4 componentes</li>
                 <li>🚫 Sem exportação do site</li>
                 <li>🚫 Sem pixel de tráfego pago</li>
-                <li>🚫 Marca d’água presente</li>
+                <li>🚫 Marca d'água presente</li>
               </ul>
             </div>
-            <button className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 cursor-pointer">
+            <button onClick={() => router.push('https://linkiwi.vercel.app')} className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 cursor-pointer">
               Escolher
             </button>
           </div>
@@ -206,10 +253,10 @@ export default function Home() {
                 <li>✔ Permite vídeos/GIFs nos botões</li>
                 <li>🚫 Sem exportação do site</li>
                 <li>🚫 Sem pixel de tráfego pago</li>
-                <li>🚫 Marca d’água presente</li>
+                <li>🚫 Marca d'água presente</li>
               </ul>
             </div>
-            <button className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-red-700 cursor-pointer">
+            <button onClick={() => handleCheckout('basic')} className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-red-700 cursor-pointer">
               Escolher
             </button>
           </div>
@@ -226,7 +273,7 @@ export default function Home() {
                 <li>✔ Componentes ilimitados</li>
                 <li>✔ Exportação do site para domínio próprio</li>
                 <li>✔ Pixel de tráfego pago (Meta, Google Ads, etc.)</li>
-                <li>✔ Sem marca d’água</li>
+                <li>✔ Sem marca d'água</li>
                 <li>✔ Templates premium e personalizáveis</li>
                 <li>✔ Personalização CSS avançada</li>
                 <li>✔ Conexão de domínio próprio</li>
@@ -235,7 +282,7 @@ export default function Home() {
                 <li>✔ Integração com WhatsApp, Instagram Bio, Google Analytics</li>
               </ul>
             </div>
-            <button className="flex self-center mt-6 bg-lime-500 text-white px-6 py-2 rounded-md hover:bg-yellow-700 cursor-pointer">
+            <button onClick={() => handleCheckout('premium')} className="flex self-center mt-6 bg-lime-500 text-white px-6 py-2 rounded-md hover:bg-yellow-700 cursor-pointer">
               Escolher
             </button>
           </div>
