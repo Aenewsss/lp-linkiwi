@@ -1,7 +1,45 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
+
+const faqItems = [
+  {
+    question: "Para quem é?",
+    answer: "Nosso serviço é ideal para criadores de conteúdo, empresas e profissionais que desejam criar páginas personalizadas de forma rápida e intuitiva.",
+  },
+  {
+    question: "O que é Drag & Drop?",
+    answer: "Drag & Drop é uma funcionalidade que permite arrastar e soltar elementos na tela para criar sua página de maneira fácil e sem precisar programar.",
+  },
+  {
+    question: "Qual formato dos arquivos ao exportar?",
+    answer: "Ao exportar seu site, você receberá os arquivos no formato HTML, CSS e JavaScript, prontos para serem hospedados no seu próprio domínio.",
+  },
+  {
+    question: "Posso criar mais de um perfil na minha conta?",
+    answer: "Sim! Dependendo do seu plano, você pode criar múltiplos perfis e gerenciar diversas páginas dentro de uma única conta.",
+  },
+  {
+    question: "Após exportar, o site é meu?",
+    answer: "Sim, ao exportar seu site, você tem total controle sobre os arquivos e pode hospedá-los onde quiser.",
+  },
+  {
+    question: "O que é o código de rastreamento da Meta e Google Ads?",
+    answer: "São códigos usados para rastrear visitantes e medir o desempenho de anúncios pagos no Facebook (Meta) e Google Ads.",
+  }
+];
 
 export default function Home() {
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <div className="flex flex-col  w-full">
       {/* Hero Section */}
@@ -19,8 +57,8 @@ export default function Home() {
                 <Link className="transition-all hover:scale-105" href="/#funcoes">FUNÇÕES</Link>
                 <Link className="transition-all hover:scale-105" href="/#precos">PREÇOS</Link>
                 <Link className="transition-all hover:scale-105" href="/#faq">FAQ</Link>
-                <Link href="https://linkiwi.vercel.app/" className="md:hidden flex text-black font-bold transition-all hover:scale-105">LOG IN</Link>
-                <Link href="https://linkiwi.vercel.app/" className="md:hidden flex bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
+                <Link href="https://linkiwi.vercel.app/login" className="md:hidden flex text-black font-bold transition-all hover:scale-105">LOG IN</Link>
+                <Link href="https://linkiwi.vercel.app/register" className="md:hidden flex bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
               </div>
 
             </div>
@@ -43,8 +81,8 @@ export default function Home() {
           <Image className="w-1/2 md:block hidden" width={300} height={300} src="/top-image.svg" alt="Imagem topo" />
 
           <div className="md:flex hidden gap-4 md:absolute top-0 end-30 items-center">
-            <Link href="https://linkiwi.vercel.app/" className="text-black font-bold transition-all hover:scale-105">LOG IN</Link>
-            <Link href="https://linkiwi.vercel.app/" className="bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
+            <Link href="https://linkiwi.vercel.app/login" className="text-black font-bold transition-all hover:scale-105">LOG IN</Link>
+            <Link href="https://linkiwi.vercel.app/register" className="bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
           </div>
         </nav>
       </section>
@@ -129,45 +167,111 @@ export default function Home() {
       </section >
 
       {/* Preços */}
-      {/* < section className="py-16 px-6 bg-[#CFE383] text-center" >
-        <h2 className="text-3xl font-semibold text-black">Preços</h2>
-        <span className="text-3xl font-semibold text-gray-800">Escolha seu plano favorito</span>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          <div className="bg-white shadow-md p-6 rounded-lg border">
-            <h3 className="text-xl font-bold text-[#649269 ]">FREE</h3>
-            <ul className="mt-4 text-gray-600 text-sm space-y-2">
-              <li>✔ Custom URL</li>
-              <li>✔ Acesso a estatísticas</li>
-              <li>✔ Suporte via email</li>
-            </ul>
-            <button className="mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">
+      <section className="py-16 px-6 bg-[#CFE383] text-center">
+        <h2 className="text-3xl font-bold text-black">PREÇOS</h2>
+        <span className="text-lg font-medium text-gray-500">Escolha seu plano favorito</span>
+
+        <div className="flex flex-wrap gap-6 mt-6 justify-center">
+
+          {/* FREE */}
+          <div className="bg-white w-[400px] shadow-md p-6 rounded-lg flex flex-col justify-between">
+            <div className="flex flex-col gap-2">
+              <h3 className="font-bold bg-[#FFF1E5] text-black flex place-self-center px-2 py-1 rounded-lg">FREE</h3>
+              <ul className="mt-4 text-gray-600 text-sm space-y-2">
+                <li>✔ Custom URL</li>
+                <li>✔ Acesso a estatísticas básicas</li>
+                <li>✔ Suporte via email</li>
+                <li>✔ Até 4 componentes</li>
+                <li>🚫 Sem exportação do site</li>
+                <li>🚫 Sem pixel de tráfego pago</li>
+                <li>🚫 Marca d’água presente</li>
+              </ul>
+            </div>
+            <button className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 cursor-pointer">
               Escolher
             </button>
           </div>
-          <div className="bg-white shadow-md p-6 rounded-lg border">
-            <h3 className="text-xl font-bold text-[#649269 ]">BASIC</h3>
-            <ul className="mt-4 text-gray-600 text-sm space-y-2">
-              <li>✔ Custom URL</li>
-              <li>✔ Acesso a estatísticas</li>
-              <li>✔ Suporte via email</li>
-            </ul>
-            <button className="mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">
+
+          {/* BASIC */}
+          <div className="bg-white w-[400px] shadow-md p-6 rounded-lg flex flex-col justify-between">
+            <div className="flex flex-col gap-2">
+
+              <h3 className="font-bold bg-[#FFE5E5] text-black flex place-self-center px-2 py-1 rounded-lg">BASIC</h3>
+              <ul className="mt-4 text-gray-600 text-sm space-y-2">
+                <li>✔ Custom URL</li>
+                <li>✔ Acesso a estatísticas avançadas</li>
+                <li>✔ Suporte via email</li>
+                <li>✔ Até 16 componentes</li>
+                <li>✔ Templates adicionais</li>
+                <li>✔ Permite vídeos/GIFs nos botões</li>
+                <li>🚫 Sem exportação do site</li>
+                <li>🚫 Sem pixel de tráfego pago</li>
+                <li>🚫 Marca d’água presente</li>
+              </ul>
+            </div>
+            <button className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-red-700 cursor-pointer">
               Escolher
             </button>
           </div>
-          <div className="bg-white shadow-md p-6 rounded-lg border">
-            <h3 className="text-xl font-bold text-[#649269 ]">PRO</h3>
-            <ul className="mt-4 text-gray-600 text-sm space-y-2">
-              <li>✔ Custom URL</li>
-              <li>✔ Acesso a estatísticas</li>
-              <li>✔ Suporte via email</li>
-            </ul>
-            <button className="mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">
+
+          {/* PREMIUM */}
+          <div className="bg-white w-[400px] shadow-lg p-6 rounded-lg flex flex-col justify-between">
+            <div className="flex flex-col gap-2">
+
+              <h3 className="font-bold bg-[#FFDE59] text-black flex place-self-center px-2 py-1 rounded-lg">PREMIUM</h3>
+              <ul className="mt-4 text-gray-600 text-sm space-y-2">
+                <li>✔ Custom URL</li>
+                <li>✔ Acesso a estatísticas avançadas</li>
+                <li>✔ Suporte prioritário via chat + email</li>
+                <li>✔ Componentes ilimitados</li>
+                <li>✔ Exportação do site para domínio próprio</li>
+                <li>✔ Pixel de tráfego pago (Meta, Google Ads, etc.)</li>
+                <li>✔ Sem marca d’água</li>
+                <li>✔ Templates premium e personalizáveis</li>
+                <li>✔ Personalização CSS avançada</li>
+                <li>✔ Conexão de domínio próprio</li>
+                <li>✔ Backup e restauração</li>
+                <li>✔ Integração com email marketing</li>
+                <li>✔ Integração com WhatsApp, Instagram Bio, Google Analytics</li>
+              </ul>
+            </div>
+            <button className="flex self-center mt-6 bg-lime-500 text-white px-6 py-2 rounded-md hover:bg-yellow-700 cursor-pointer">
               Escolher
             </button>
           </div>
+
         </div>
-      </section > */}
+      </section>
+
+      <section className="py-16 px-6 bg-white text-center text-[#649269]">
+        <h2 className="text-3xl font-bold">FAQ</h2>
+
+        <div className="max-w-3xl mx-auto mt-6">
+          {faqItems.map((item, index) => (
+            <div key={index} className="mb-3">
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="cursor-pointer w-full flex justify-between items-center border text-[#649269] text-left p-4 rounded-lg focus:outline-none"
+              >
+                <span className="text-lg">{item.question}</span>
+                <ChevronDownIcon
+                  className={`w-6 h-6 transition-transform ${openIndex === index ? "rotate-180" : "rotate-0"
+                    }`}
+                />
+              </button>
+
+              <div
+                className={`overflow-hidden transition-max-height duration-[400ms] ease-in-out ${openIndex === index ? "max-h-40" : "max-h-0"
+                  }`}
+              >
+                <div className="bg-[#FAFAFA] text-[#649269] p-4 rounded-b-lg mt-1 text-start">
+                  {item.answer}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* CTA */}
       < section className="w-full bg-[#649269] text-[#CFE383] py-16 text-center px-20 flex justify-between items-center md:flex-nowrap flex-wrap" >
