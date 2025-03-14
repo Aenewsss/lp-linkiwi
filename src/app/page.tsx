@@ -201,17 +201,80 @@ export default function Home() {
       </section >
 
       {/* Por que ter uma Página de Links? */}
-      < section className="py-16 px-6 text-center text-[#649269] bg-white flex flex-col items-center" >
-        <h2 id="o-que-fazemos" className="text-5xl font-bold ">Por que ter uma Página de Links?</h2>
-        <p className="font-bold mt-10 max-w-[600px] text-start">Se você usa redes sociais para divulgar seus produtos, serviços ou conteúdos, sabe o quanto é frustrante ter apenas um link na bio.
+      <section className="py-16 px-6 text-center text-[#649269] bg-white flex flex-col items-center">
+        <h2 id="o-que-fazemos" className="text-5xl font-bold">Por que ter uma Página de Links?</h2>
+        <p className="font-bold mt-10 max-w-[600px] text-start">
+          Se você usa redes sociais para divulgar seus produtos, serviços ou conteúdos, sabe o quanto é frustrante ter apenas um link na bio.
           <br /><br />
-          Com a nossa ferramenta, você pode centralizar tudo o que realmente importa em um só lugar, aumentando suas conversões e facilitando a jornada do seu público
+          Com a nossa ferramenta, você pode centralizar tudo o que realmente importa em um só lugar, aumentando suas conversões e facilitando a jornada do seu público.
         </p>
         <Image src="/mockup.png" width={600} height={500} alt="Preview" className="mt-6" />
         <Link href="https://linkiwi.vercel.app/" className="mt-10 cursor-pointer bg-[#649269] text-[#CFE383] px-30 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
           EU QUERO
         </Link>
-      </section >
+      </section>
+
+      {/* Criadores */}
+      <section className="py-16 text-center bg-[#CFE383] flex flex-col items-center">
+        <h2 className="text-3xl font-bold text-[#649269]">60,000+ CRIADORES</h2>
+        <p className="text-lg text-gray-700">Os principais criadores e marcas do mundo usam Linkiwi</p>
+        <div className="flex mt-6 gap-10 overflow-hidden">
+          <div className="flex animate-scroll gap-10">
+            {/* Add images of creators here */}
+            <Image unoptimized src="/person-1.png" width={72} height={72} alt="person- 1" className="rounded-full" />
+            <Image unoptimized src="/person-2.png" width={72} height={72} alt="person- 2" className="rounded-full" />
+            <Image unoptimized src="/person-3.png" width={72} height={72} alt="person- 3" className="rounded-full" />
+            <Image unoptimized src="/person-4.png" width={72} height={72} alt="person- 4" className="rounded-full" />
+            <Image unoptimized src="/person-5.png" width={72} height={72} alt="person- 5" className="rounded-full" />
+            <Image unoptimized src="/person-6.png" width={72} height={72} alt="person- 6" className="rounded-full" />
+            <Image unoptimized src="/person-7.png" width={72} height={72} alt="person- 7" className="rounded-full" />
+            <Image unoptimized src="/person-8.png" width={72} height={72} alt="person- 8" className="rounded-full" />
+            <Image unoptimized src="/person-9.png" width={72} height={72} alt="person- 9" className="rounded-full" />
+            <Image unoptimized src="/person-10.png" width={72} height={72} alt="person- 10" className="rounded-full" />
+            <Image unoptimized src="/person-11.png" width={72} height={72} alt="person- 11" className="rounded-full" />
+            <Image unoptimized src="/person-1.png" width={72} height={72} alt="person- 1" className="rounded-full" />
+            <Image unoptimized src="/person-2.png" width={72} height={72} alt="person- 2" className="rounded-full" />
+            <Image unoptimized src="/person-3.png" width={72} height={72} alt="person- 3" className="rounded-full" />
+            <Image unoptimized src="/person-4.png" width={72} height={72} alt="person- 4" className="rounded-full" />
+            <Image unoptimized src="/person-5.png" width={72} height={72} alt="person- 5" className="rounded-full" />
+            <Image unoptimized src="/person-6.png" width={72} height={72} alt="person- 6" className="rounded-full" />
+            <Image unoptimized src="/person-7.png" width={72} height={72} alt="person- 7" className="rounded-full" />
+            <Image unoptimized src="/person-8.png" width={72} height={72} alt="person- 8" className="rounded-full" />
+            <Image unoptimized src="/person-9.png" width={72} height={72} alt="person- 9" className="rounded-full" />
+            <Image unoptimized src="/person-10.png" width={72} height={72} alt="person- 10" className="rounded-full" />
+            <Image unoptimized src="/person-11.png" width={72} height={72} alt="person- 11" className="rounded-full" />
+            <Image unoptimized src="/person-1.png" width={72} height={72} alt="person- 1" className="rounded-full" />
+            <Image unoptimized src="/person-2.png" width={72} height={72} alt="person- 2" className="rounded-full" />
+            <Image unoptimized src="/person-3.png" width={72} height={72} alt="person- 3" className="rounded-full" />
+            <Image unoptimized src="/person-4.png" width={72} height={72} alt="person- 4" className="rounded-full" />
+            <Image unoptimized src="/person-5.png" width={72} height={72} alt="person- 5" className="rounded-full" />
+            <Image unoptimized src="/person-6.png" width={72} height={72} alt="person- 6" className="rounded-full" />
+            <Image unoptimized src="/person-7.png" width={72} height={72} alt="person- 7" className="rounded-full" />
+            <Image unoptimized src="/person-8.png" width={72} height={72} alt="person- 8" className="rounded-full" />
+            <Image unoptimized src="/person-9.png" width={72} height={72} alt="person- 9" className="rounded-full" />
+            <Image unoptimized src="/person-10.png" width={72} height={72} alt="person- 10" className="rounded-full" />
+            <Image unoptimized src="/person-11.png" width={72} height={72} alt="person- 11" className="rounded-full" />
+            {/* Add more images as needed */}
+          </div>
+        </div>
+        <Link href="https://linkiwi.vercel.app/" className="mt-10 cursor-pointer bg-[#649269] text-white px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
+          EU QUERO
+        </Link>
+      </section>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+      `}</style>
 
       {/* Preços */}
       <section className="py-16 px-6 bg-[#CFE383] text-center">
