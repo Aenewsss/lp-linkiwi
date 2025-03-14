@@ -95,15 +95,15 @@ export default function Home() {
           <div className="flex flex-col gap-20">
 
             <div className="flex items-center gap-16 md:flex-nowrap flex-wrap">
-              <Link className="transition-all hover:scale-105" href="/">
+              <Link className="transition-all hover:scale-105 font-bold" href="/">
                 <Image width={207} height={300} src="/logo.svg" alt="Logo horizontal" />
               </Link>
 
               <div className="flex gap-4 items-center md:flex-nowrap flex-wrap">
-                <Link className="transition-all hover:scale-105" href="/#o-que-fazemos">O QUE FAZEMOS</Link>
-                <Link className="transition-all hover:scale-105" href="/#funcoes">FUNÇÕES</Link>
-                <Link className="transition-all hover:scale-105" href="/#precos">PREÇOS</Link>
-                <Link className="transition-all hover:scale-105" href="/#faq">FAQ</Link>
+                <Link className="transition-all hover:scale-105 font-bold" href="/#o-que-fazemos">O QUE FAZEMOS</Link>
+                <Link className="transition-all hover:scale-105 font-bold" href="/#funcoes">FUNÇÕES</Link>
+                <Link className="transition-all hover:scale-105 font-bold" href="/#precos">PREÇOS</Link>
+                <Link className="transition-all hover:scale-105 font-bold" href="/#faq">FAQ</Link>
                 <Link href="https://linkiwi.vercel.app/" className="md:hidden flex text-black font-bold transition-all hover:scale-105">LOG IN</Link>
                 <Link href="https://linkiwi.vercel.app/" className="md:hidden flex bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
               </div>
@@ -118,7 +118,7 @@ export default function Home() {
                   A maneira mais prática, rápida e acessível de criar sua página de links personalizada.
                 </p>
               </div>
-              <Link href="https://linkiwi.vercel.app/" className="cursor-pointer bg-[#649269] text-[#CFE383] px-6 py-3 rounded-md shadow-md hover:scale-105 transition-all flex self-start">
+              <Link href="https://linkiwi.vercel.app/" className="cursor-pointer bg-[#649269] text-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
                 QUERO ME INSCREVER
               </Link>
             </div>
@@ -137,15 +137,15 @@ export default function Home() {
       {/* Benefícios */}
       <section className="py-16 px-20 w-full bg-[#CFE383] text-center flex flex-col gap-10">
         <div className="flex justify-between text-[#649269] text-left md:flex-nowrap flex-wrap">
-          <h2 className="text-5xl font-bold">Simples, Rápido e sem Complicação!</h2>
+          <h2 id="funcoes" className="text-5xl font-bold">Simples, Rápido e sem Complicação!</h2>
           <span className="w-2/3">Diferente de outras ferramentas, aqui você tem total liberdade para personalizar sua página do seu jeito.
             Com apenas alguns cliques, você cria uma página de links
             <span className="font-extrabold">Bonita, Responsiva e otimizada para conversão.</span></span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
           <div className="bg-white shadow-md p-4 rounded-3xl border">
             <div className="flex justity-between gap-10">
-              <Image unoptimized className="object-contain" alt="Logo Organização" width={84} height={54} src="/1.png" />
+              <Image className="min-w-[84px] min-h-[54px]" unoptimized alt="Logo Organização" width={84} height={54} src="/1.png" />
               <div className="flex flex-col items-start text-start">
                 <h3 className="pb-0 text-lg font-medium text-[#649269]">Organização</h3>
                 <p className="text-gray-600 text-sm mt-2">Organize todos os seus links em um só lugar de forma profissional.</p>
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
           <div className="bg-white shadow-md p-4 rounded-3xl border">
             <div className="flex justity-between gap-10">
-              <Image unoptimized className="object-contain" alt="Logo Personalização" width={84} height={54} src="/2.png" />
+              <Image className="min-w-[84px] min-h-[54px]" unoptimized alt="Logo Personalização" width={84} height={54} src="/2.png" />
               <div className="flex flex-col items-start text-start">
                 <h3 className="pb-0 text-lg font-medium text-[#649269]">Personalização</h3>
                 <p className="text-gray-600 text-sm mt-2">Personalize cores, fontes e estilos com nosso editor Drag & Drop.</p>
@@ -163,7 +163,7 @@ export default function Home() {
           </div>
           <div className="bg-white shadow-md p-4 rounded-3xl border">
             <div className="flex justity-between gap-10">
-              <Image unoptimized className="object-contain" alt="Logo Exportação" width={84} height={54} src="/3.png" />
+              <Image className="min-w-[84px] min-h-[54px]" unoptimized alt="Logo Exportação" width={84} height={54} src="/3.png" />
               <div className="flex flex-col items-start text-start">
                 <h3 className="pb-0 text-lg font-medium text-[#649269]">Exportação</h3>
                 <p className="text-gray-600 text-sm mt-2">Exporte sua página para o seu próprio dominio e ter um site 100% seu.</p>
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
           <div className="bg-white shadow-md p-4 rounded-3xl border">
             <div className="flex justity-between gap-10">
-              <Image unoptimized className="object-contain" alt="Logo Pixel" width={84} height={54} src="/4.png" />
+              <Image className="min-w-[84px] min-h-[54px]" unoptimized alt="Logo Pixel" width={84} height={54} src="/4.png" />
               <div className="flex flex-col items-start text-start">
                 <h3 className="pb-0 text-lg font-medium text-[#649269]">Instalar Pixel</h3>
                 <p className="text-gray-600 text-sm mt-2">Pixel do Facebook e Google para rastrear e otimizar suas campanhas.</p>
@@ -181,7 +181,7 @@ export default function Home() {
           </div >
           <div className="bg-white shadow-md p-4 rounded-3xl border">
             <div className="flex justity-between gap-10">
-              <Image unoptimized className="object-contain" alt="Logo Sociais" width={84} height={54} src="/5.png" />
+              <Image className="min-w-[84px] min-h-[54px]" unoptimized alt="Logo Sociais" width={84} height={54} src="/5.png" />
               <div className="flex flex-col items-start text-start">
                 <h3 className="pb-0 text-lg font-medium text-[#649269]">Redes Sociais</h3>
                 <p className="text-gray-600 text-sm mt-2">Integração com redes sociais, Whatsapp, Youtube e muito mais.</p>
@@ -190,7 +190,7 @@ export default function Home() {
           </div >
           <div className="bg-white shadow-md p-4 rounded-3xl border">
             <div className="flex justity-between gap-10">
-              <Image unoptimized className="object-contain" alt="Logo Responsivo" width={84} height={54} src="/6.png" />
+              <Image className="min-w-[84px] min-h-[54px]" unoptimized alt="Logo Responsivo" width={84} height={54} src="/6.png" />
               <div className="flex flex-col items-start text-start">
                 <h3 className="pb-0 text-lg font-medium text-[#649269]">Responsivo</h3>
                 <p className="text-gray-600 text-sm mt-2">Site adaptado para Desktop, tablet e celulares.</p>
@@ -202,7 +202,7 @@ export default function Home() {
 
       {/* Por que ter uma Página de Links? */}
       < section className="py-16 px-6 text-center text-[#649269] bg-white flex flex-col items-center" >
-        <h2 className="text-5xl font-bold ">Por que ter uma Página de Links?</h2>
+        <h2 id="o-que-fazemos" className="text-5xl font-bold ">Por que ter uma Página de Links?</h2>
         <p className="font-bold mt-10 max-w-[600px] text-start">Se você usa redes sociais para divulgar seus produtos, serviços ou conteúdos, sabe o quanto é frustrante ter apenas um link na bio.
           <br /><br />
           Com a nossa ferramenta, você pode centralizar tudo o que realmente importa em um só lugar, aumentando suas conversões e facilitando a jornada do seu público
@@ -215,7 +215,7 @@ export default function Home() {
 
       {/* Preços */}
       <section className="py-16 px-6 bg-[#CFE383] text-center">
-        <h2 className="text-3xl font-bold text-black">PREÇOS</h2>
+        <h2 id="precos" className="text-3xl font-bold text-[#649269]">PREÇOS</h2>
         <span className="text-lg font-medium text-gray-500">Escolha seu plano favorito</span>
 
         <div className="flex flex-wrap gap-6 mt-6 justify-center">
@@ -234,7 +234,7 @@ export default function Home() {
                 <li>🚫 Marca d'água presente</li>
               </ul>
             </div>
-            <button onClick={() => router.push('https://linkiwi.vercel.app')} className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 cursor-pointer">
+            <button onClick={() => router.push('https://linkiwi.vercel.app')} className="flex self-center mt-6 bg-[#649269] text-white text-white px-6 py-2 rounded-md hover:scale-105 cursor-pointer transition-all">
               Escolher
             </button>
           </div>
@@ -255,18 +255,20 @@ export default function Home() {
                 <li>🚫 Sem pixel de tráfego pago</li>
                 <li>🚫 Marca d'água presente</li>
               </ul>
+
+              <h3 className="mt-10 text-3xl text-black font-medium">R$ 19,90/mês</h3>
             </div>
-            <button onClick={() => handleCheckout('basic')} className="flex self-center mt-6 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-red-700 cursor-pointer">
+            <button onClick={() => handleCheckout('basic')} className="flex self-center mt-6 px-6 py-2 rounded-md bg-[#649269] text-white hover:scale-105 transition-all cursor-pointer">
               Escolher
             </button>
           </div>
 
           {/* PREMIUM */}
-          <div className="bg-white w-[400px] shadow-lg p-6 rounded-lg flex flex-col justify-between">
+          <div className="bg-[##649269] w-[400px] shadow-lg shadow-black p-6 rounded-lg flex flex-col justify-between">
             <div className="flex flex-col gap-2">
 
-              <h3 className="font-bold bg-[#FFDE59] text-black flex place-self-center px-2 py-1 rounded-lg">PREMIUM</h3>
-              <ul className="mt-4 text-gray-600 text-sm space-y-2">
+              <h3 className="font-bold bg-[#ffcc02] text-white flex place-self-center px-2 py-1 rounded-lg">PREMIUM</h3>
+              <ul className="mt-4 text-black text-sm space-y-2">
                 <li>✔ Custom URL</li>
                 <li>✔ Acesso a estatísticas avançadas</li>
                 <li>✔ Suporte prioritário via chat + email</li>
@@ -281,8 +283,10 @@ export default function Home() {
                 <li>✔ Integração com email marketing</li>
                 <li>✔ Integração com WhatsApp, Instagram Bio, Google Analytics</li>
               </ul>
+
+              <h3 className="mt-10 text-3xl text-black font-medium">R$ 49,90/mês</h3>
             </div>
-            <button onClick={() => handleCheckout('premium')} className="flex self-center mt-6 bg-lime-500 text-white px-6 py-2 rounded-md hover:bg-yellow-700 cursor-pointer">
+            <button onClick={() => handleCheckout('premium')} className="flex self-center mt-6  px-6 py-2 rounded-md bg-[#649269] text-white hover:scale-105 transition-all cursor-pointer">
               Escolher
             </button>
           </div>
@@ -291,7 +295,7 @@ export default function Home() {
       </section>
 
       <section className="py-16 px-6 bg-white text-center text-[#649269]">
-        <h2 className="text-3xl font-bold">FAQ</h2>
+        <h2 id="faq" className="text-3xl font-bold">FAQ</h2>
 
         <div className="max-w-3xl mx-auto mt-6">
           {faqItems.map((item, index) => (
