@@ -289,9 +289,9 @@ export default function Home() {
               <h3 className="font-bold bg-[#FFF1E5] text-black flex place-self-center px-2 py-1 rounded-lg">FREE</h3>
               <ul className="mt-4 text-gray-600 text-sm space-y-2">
                 <li>✔ Custom URL</li>
-                <li>✔ Acesso a estatísticas básicas</li>
                 <li>✔ Suporte via email</li>
                 <li>✔ Até 4 componentes</li>
+                <li>🚫 Acesso a estatísticas básicas</li>
                 <li>🚫 Sem exportação do site</li>
                 <li>🚫 Sem pixel de tráfego pago</li>
                 <li>🚫 Marca d'água presente</li>
@@ -309,11 +309,10 @@ export default function Home() {
               <h3 className="font-bold bg-[#FFE5E5] text-black flex place-self-center px-2 py-1 rounded-lg">BASIC</h3>
               <ul className="mt-4 text-gray-600 text-sm space-y-2">
                 <li>✔ Custom URL</li>
-                <li>✔ Acesso a estatísticas avançadas</li>
+                <li>✔ Acesso a estatísticas básicas</li>
                 <li>✔ Suporte via email</li>
                 <li>✔ Até 16 componentes</li>
-                <li>✔ Templates adicionais</li>
-                <li>✔ Permite vídeos/GIFs nos botões</li>
+                <li>✔ Templates adicionais (Em breve)</li>
                 <li>🚫 Sem exportação do site</li>
                 <li>🚫 Sem pixel de tráfego pago</li>
                 <li>🚫 Marca d'água presente</li>
@@ -336,15 +335,14 @@ export default function Home() {
                 <li>✔ Acesso a estatísticas avançadas</li>
                 <li>✔ Suporte prioritário via chat + email</li>
                 <li>✔ Componentes ilimitados</li>
-                <li>✔ Exportação do site para domínio próprio</li>
                 <li>✔ Pixel de tráfego pago (Meta, Google Ads, etc.)</li>
                 <li>✔ Sem marca d'água</li>
-                <li>✔ Templates premium e personalizáveis</li>
-                <li>✔ Personalização CSS avançada</li>
-                <li>✔ Conexão de domínio próprio</li>
-                <li>✔ Backup e restauração</li>
-                <li>✔ Integração com email marketing</li>
+                <li>✔ Exportação do site</li>
                 <li>✔ Integração com WhatsApp, Instagram Bio, Google Analytics</li>
+                <li>✔ Templates premium e personalizáveis (Em breve)</li>
+                <li>✔ Conexão de domínio próprio (Em breve)</li>
+                <li>✔ Backup e restauração (Em breve)</li>
+                <li>✔ Integração com email marketing (Em breve)</li>
               </ul>
 
               <h3 className="mt-10 text-3xl text-black font-medium">R$ 49,90/mês</h3>
