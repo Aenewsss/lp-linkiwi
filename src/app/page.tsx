@@ -7,7 +7,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { ref, set } from "firebase/database";
+import { ref, set, update } from "firebase/database";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
@@ -71,7 +71,7 @@ export default function Home() {
       // Set info of stripe_plan on realtime database
       const db = getDatabase();
       const userRef = ref(db, 'users/' + user.uid);
-      await set(userRef, {
+      await update(userRef, {
         planType
       });
 
