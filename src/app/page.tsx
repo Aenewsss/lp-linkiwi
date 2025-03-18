@@ -53,21 +53,25 @@ const faqItems = [
 export default function Home() {
   const router = useRouter();
 
-  const handleCheckout = async (planType: 'basic' | 'premium') => {
+  const handleCheckout = async (planType: 'free' | 'basic' | 'premium') => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
-      const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ planType, email: user.email }),
-      });
+      let url = process.env.NEXT_PUBLIC_APP_URL as string;
 
-      const { url } = await response.json();
+      if (planType !== 'free') {
+        const response = await fetch('/api/checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ planType, email: user.email }),
+        });
 
+        const data = await response.json();
+        url = data.url;
+      }
       // Set info of stripe_plan on realtime database
       const db = getDatabase();
       const userRef = ref(db, 'users/' + user.uid);
@@ -297,7 +301,7 @@ export default function Home() {
                 <li>🚫 Marca d'água presente</li>
               </ul>
             </div>
-            <button onClick={() => router.push('https://linkiwi.vercel.app')} className="flex self-center mt-6 bg-[#649269] text-white text-white px-6 py-2 rounded-md hover:scale-105 cursor-pointer transition-all">
+            <button onClick={() => handleCheckout('free')} className="flex self-center mt-6 bg-[#649269] text-white  px-6 py-2 rounded-md hover:scale-105 cursor-pointer transition-all">
               Escolher
             </button>
           </div>
