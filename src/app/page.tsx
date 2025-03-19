@@ -109,7 +109,7 @@ export default function Home() {
                 <Link className="transition-all hover:scale-105 font-bold" href="/#precos">PREÇOS</Link>
                 <Link className="transition-all hover:scale-105 font-bold" href="/#faq">FAQ</Link>
                 <Link href="https://linkiwi.vercel.app/" className="md:hidden flex text-black font-bold transition-all hover:scale-105">LOG IN</Link>
-                <Link href="https://linkiwi.vercel.app/" className="md:hidden flex bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
+                <Link href="#precos" className="md:hidden flex bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
               </div>
 
             </div>
@@ -122,7 +122,7 @@ export default function Home() {
                   A maneira mais prática, rápida e acessível de criar sua página de links personalizada.
                 </p>
               </div>
-              <Link href="https://linkiwi.vercel.app/" className="cursor-pointer bg-[#649269] text-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
+              <Link href="#precos" className="cursor-pointer bg-[#649269] text-[#CFE383] px-6 py-3 flex self-start rounded-3xl shadow-md hover:scale-105 transition-all">
                 QUERO ME INSCREVER
               </Link>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
           Com a nossa ferramenta, você pode centralizar tudo o que realmente importa em um só lugar, aumentando suas conversões e facilitando a jornada do seu público.
         </p>
         <Image src="/mockup.png" width={600} height={500} alt="Preview" className="mt-6" />
-        <Link href="https://linkiwi.vercel.app/" className="mt-10 cursor-pointer bg-[#649269] text-[#CFE383] px-30 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
+        <Link href="#precos" className="mt-10 cursor-pointer font-bold bg-[#649269] text-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
           EU QUERO
         </Link>
       </section>
@@ -261,7 +261,7 @@ export default function Home() {
             {/* Add more images as needed */}
           </div>
         </div>
-        <Link href="https://linkiwi.vercel.app/" className="mt-10 cursor-pointer bg-[#649269] text-white px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
+        <Link href="#precos" className="mt-10 cursor-pointer font-bold bg-[#649269] text-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">
           EU QUERO
         </Link>
       </section>
@@ -301,7 +301,7 @@ export default function Home() {
                 <li>🚫 Marca d'água presente</li>
               </ul>
             </div>
-            <button onClick={() => handleCheckout('free')} className="flex self-center mt-6 bg-[#649269] text-white  px-6 py-2 rounded-md hover:scale-105 cursor-pointer transition-all">
+            <button onClick={() => handleCheckout('free')} className="flex self-center mt-6 font-bold bg-[#649269] text-[#CFE383] px-6 py-3 rounded-3xl hover:scale-105 cursor-pointer transition-all">
               Escolher
             </button>
           </div>
@@ -324,7 +324,7 @@ export default function Home() {
 
               <h3 className="mt-10 text-3xl text-black font-medium">R$ 19,90/mês</h3>
             </div>
-            <button onClick={() => handleCheckout('basic')} className="flex self-center mt-6 px-6 py-2 rounded-md bg-[#649269] text-white hover:scale-105 transition-all cursor-pointer">
+            <button onClick={() => handleCheckout('basic')} className="flex self-center mt-6 font-bold bg-[#649269] text-[#CFE383] px-6 py-3 rounded-3xl hover:scale-105 transition-all cursor-pointer">
               Escolher
             </button>
           </div>
@@ -351,7 +351,7 @@ export default function Home() {
 
               <h3 className="mt-10 text-3xl text-black font-medium">R$ 49,90/mês</h3>
             </div>
-            <button onClick={() => handleCheckout('premium')} className="flex self-center mt-6  px-6 py-2 rounded-md bg-[#649269] text-white hover:scale-105 transition-all cursor-pointer">
+            <button onClick={() => handleCheckout('premium')} className="flex self-center mt-6 font-bold  text-[#CFE383] px-6 py-3 rounded-3xl bg-[#649269] hover:scale-105 transition-all cursor-pointer">
               Escolher
             </button>
           </div>
@@ -395,7 +395,7 @@ export default function Home() {
           <h2 className="text-5xl font-semibold">Comece a interagir com seu público!</h2>
           <p className="text-white/90 text-lg  ">Construa sua página de links agora mesmo e aumente sua presença digital.</p>
         </div>
-        <Link href="https://linkiwi.vercel.app/" className="bg-transparent text-[#CFE383] border-2 border-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">Comece agora</Link>
+        <Link href="#precos" className="bg-transparent text-[#CFE383] border-2 border-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">Comece agora</Link>
       </section >
     </div >
   );
