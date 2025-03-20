@@ -133,7 +133,7 @@ export default function Home() {
 
           <div className="md:flex hidden gap-4 md:absolute top-0 end-30 items-center">
             <Link href="https://linkiwi.vercel.app/" className="text-black font-bold transition-all hover:scale-105">LOG IN</Link>
-            <Link href="https://linkiwi.vercel.app/" className="bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
+            <Link href="#precos" className="bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
           </div>
         </nav>
       </section>
