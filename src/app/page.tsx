@@ -294,11 +294,11 @@ export default function Home() {
               <ul className="mt-4 text-gray-600 text-sm space-y-2">
                 <li>✔ Custom URL</li>
                 <li>✔ Suporte via email</li>
-                <li>✔ Até 4 componentes</li>
+                <li>✔ Até 4 links</li>
                 <li>🚫 Acesso a estatísticas básicas</li>
                 <li>🚫 Sem exportação do site</li>
                 <li>🚫 Sem pixel de tráfego pago</li>
-                <li>🚫 Marca d'água presente</li>
+                <li>🚫 Sem marca d'água</li>
               </ul>
             </div>
             <button onClick={() => handleCheckout('free')} className="flex self-center mt-6 font-bold bg-[#649269] text-[#CFE383] px-6 py-3 rounded-3xl hover:scale-105 cursor-pointer transition-all">
@@ -315,11 +315,11 @@ export default function Home() {
                 <li>✔ Custom URL</li>
                 <li>✔ Acesso a estatísticas básicas</li>
                 <li>✔ Suporte via email</li>
-                <li>✔ Até 16 componentes</li>
+                <li>✔ Até 16 links</li>
                 <li>✔ Templates adicionais (Em breve)</li>
                 <li>🚫 Sem exportação do site</li>
                 <li>🚫 Sem pixel de tráfego pago</li>
-                <li>🚫 Marca d'água presente</li>
+                <li>🚫 Sem marca d'água</li>
               </ul>
 
               <h3 className="mt-10 text-3xl text-black font-medium">R$ 19,90/mês</h3>
@@ -338,7 +338,7 @@ export default function Home() {
                 <li>✔ Custom URL</li>
                 <li>✔ Acesso a estatísticas avançadas</li>
                 <li>✔ Suporte prioritário via chat + email</li>
-                <li>✔ Componentes ilimitados</li>
+                <li>✔ Links ilimitados</li>
                 <li>✔ Pixel de tráfego pago (Meta, Google Ads, etc.)</li>
                 <li>✔ Sem marca d'água</li>
                 <li>✔ Exportação do site</li>
