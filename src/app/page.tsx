@@ -9,6 +9,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { ref, set, update } from "firebase/database";
 import { getDatabase } from "firebase/database";
+import Nav from "./nav";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -95,47 +96,7 @@ export default function Home() {
     <div className="flex flex-col  w-full">
       {/* Hero Section */}
       <section className="w-full bg-white py-16 flex flex-col items-center text-center ps-20">
-        <nav className="w-full flex text-[#649269] items-start justify-between font-extrabold relative gap-10 md:flex-nowrap flex-wrap">
-          <div className="flex flex-col gap-20">
-
-            <div className="flex items-center gap-16 md:flex-nowrap flex-wrap">
-              <Link className="transition-all hover:scale-105 font-bold" href="/">
-                <Image width={207} height={300} src="/logo.svg" alt="Logo horizontal" />
-              </Link>
-
-              <div className="flex gap-4 items-center md:flex-nowrap flex-wrap">
-                <Link className="transition-all hover:scale-105 font-bold" href="/#o-que-fazemos">O QUE FAZEMOS</Link>
-                <Link className="transition-all hover:scale-105 font-bold" href="/#funcoes">FUNÇÕES</Link>
-                <Link className="transition-all hover:scale-105 font-bold" href="/#precos">PREÇOS</Link>
-                <Link className="transition-all hover:scale-105 font-bold" href="/#faq">FAQ</Link>
-                <Link href="https://linkiwi.vercel.app/" className="md:hidden flex text-black font-bold transition-all hover:scale-105">LOG IN</Link>
-                <Link href="#precos" className="md:hidden flex bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
-              </div>
-
-            </div>
-            <div className="flex flex-col justify-between gap-10">
-              <div className="flex flex-col gap-4 items-start justify-start text-start">
-                <h1 className="text-6xl font-bold text-[#649269]">
-                  Crie sua <span className="underline">Página de Links</span> Profissionais em minutos!
-                </h1>
-                <p className="text-[#7D8598] max-w-2xl mt-4 font-normal text-lg">
-                  A maneira mais prática, rápida e acessível de criar sua página de links personalizada.
-                </p>
-              </div>
-              <Link href="#precos" className="cursor-pointer bg-[#649269] text-[#CFE383] px-6 py-3 flex self-start rounded-3xl shadow-md hover:scale-105 transition-all">
-                QUERO ME INSCREVER
-              </Link>
-            </div>
-
-          </div>
-
-          <Image className="w-1/2 md:block hidden" width={300} height={300} src="/top-image.svg" alt="Imagem topo" />
-
-          <div className="md:flex hidden gap-4 md:absolute top-0 end-30 items-center">
-            <Link href="https://linkiwi.vercel.app/" className="text-black font-bold transition-all hover:scale-105">LOG IN</Link>
-            <Link href="#precos" className="bg-[#649269] text-[#CFE383] border-2 border-[#CFE383] rounded-4xl py-1 px-2 font-bold transition-all hover:scale-105">INSCREVA-SE</Link>
-          </div>
-        </nav>
+        <Nav />
       </section>
 
       {/* Benefícios */}
