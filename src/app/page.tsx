@@ -219,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* Criadores */}
-      <section className="py-16 text-center bg-[#CFE383] flex flex-col items-center">
+      <section className="py-16 text-center bg-[#CFE383] flex flex-col items-center overflow-hidden">
         <h2 className="text-3xl font-bold text-[#649269]">60,000+ CRIADORES</h2>
         <p className="text-lg text-gray-700">Os principais criadores e marcas do mundo usam Linkiwi</p>
         <div className="flex mt-6 gap-10 overflow-hidden">
