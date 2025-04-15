@@ -95,15 +95,15 @@ export default function Home() {
   return (
     <div className="flex flex-col  w-full">
       {/* Hero Section */}
-      <section className="w-full bg-white py-16 flex flex-col items-center text-center ps-20">
+      <section className="w-full bg-white py-16 flex flex-col items-center text-center md:ps-20">
         <Nav />
       </section>
 
       {/* Benefícios */}
-      <section className="py-16 px-20 w-full bg-[#CFE383] text-center flex flex-col gap-10">
+      <section className="py-16 px-4 md:px-20 w-full bg-[#CFE383] text-center flex flex-col gap-10">
         <div className="flex justify-between text-[#649269] text-left md:flex-nowrap flex-wrap">
           <h2 id="funcoes" className="text-5xl font-bold">Simples, Rápido e sem Complicação!</h2>
-          <span className="w-2/3">Diferente de outras ferramentas, aqui você tem total liberdade para personalizar sua página do seu jeito.
+          <span className="md:w-2/3 md:mt-0 mt-4">Diferente de outras ferramentas, aqui você tem total liberdade para personalizar sua página do seu jeito.
             Com apenas alguns cliques, você cria uma página de links
             <span className="font-extrabold">Bonita, Responsiva e otimizada para conversão.</span></span>
         </div>
@@ -351,12 +351,12 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      < section className="w-full bg-[#649269] text-[#CFE383] py-16 text-center px-20 flex justify-between items-center md:flex-nowrap flex-wrap" >
+      < section className="w-full bg-[#649269] text-[#CFE383] py-16 text-center px-4 md:px-20 flex justify-between items-center md:flex-nowrap flex-wrap" >
         <div className="flex flex-col items-start gap-4 max-w-[500px] text-start">
           <h2 className="text-5xl font-semibold">Comece a interagir com seu público!</h2>
           <p className="text-white/90 text-lg  ">Construa sua página de links agora mesmo e aumente sua presença digital.</p>
         </div>
-        <Link href="#precos" className="bg-transparent text-[#CFE383] border-2 border-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">Comece agora</Link>
+        <Link href="#precos" className="md:mt-0 mt-4 bg-transparent text-[#CFE383] border-2 border-[#CFE383] px-6 py-3 rounded-3xl shadow-md hover:scale-105 transition-all">Comece agora</Link>
       </section >
     </div >
   );
